@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/cron/randomupdate</url>
+    <description>URL for randomUpdate</description>
+    <schedule>every 7 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/cron/checktimeline</url>
+    <description>URL for checkTimeline</description>
+    <schedule>every 7 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/cron/checkfollow</url>
+    <description>URL for checkFollow</description>
+    <schedule>every 3 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/cron/checkremove</url>
+    <description>URL for auto_remove</description>
+    <schedule>every 3 minutes</schedule>
+  </cron>
+</cronentries>
