@@ -6,10 +6,10 @@
   
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.zentooo</groupId>
-  <artifactId>gae-bot-base</artifactId>
+  <artifactId>gae-scala-twitter-bot</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
-  <name>gae-bot-base project</name>
+  <name>gae-scala-twitter-bot project</name>
   <inceptionYear>2010</inceptionYear>
   <properties>
     <scala.version>2.7.7</scala.version>
