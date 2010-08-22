@@ -33,21 +33,21 @@ object TwitterBot {
   }
 
   def checkTimeline(replyRate: Double): NodeSeq = {
-    val list = List(twitter.getId)
+    val userIds = List(twitter.getId)
     for {
       status <- twitter.getFriendsTimeline
       user = status.getUser
       userId = user.getId
       replyOption = Replies.getReply(status)
       inReplyToStatusId = status.getInReplyToStatusId
-      if ! list.contains(userId)
+      if ! userIds.contains(userId)
       if random.nextDouble < replyRate
     } {
       //replyOption.foreach(replyString => reply(user, replyString, inReplyToStatusId))
       replyOption.foreach(replyString => reply(user, replyString))
-      user :: list
+      userId :: userIds
     }
-    Text("checkTimeline done")
+    Text("checkTimeline done with " + userIds.reduceLeft( (a, b) => a + b ) )
   }
 
   def makeGreeting(user: User) = reply(user, Config.greeting)

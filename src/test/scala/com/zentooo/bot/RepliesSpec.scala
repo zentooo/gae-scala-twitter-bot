@@ -48,7 +48,21 @@ class RepliesSpec extends SpecificationWithJUnit("Spec for Replies") {
        val status = TwitterBot.update(tweet)
        val result = Replies.getReply(status)
        result must notBeNull
-       result must beLike{ case a: Option[String] => true }
+       result must beLike { case a: Option[String] => true }
+     }
+   }
+
+   "selectReply" should {
+     "return random reply" in {
+       var replies = "reply1;reply2;reply3"
+       var result = Replies.selectReply(replies)
+       result must beLike { case a: String => true }
+       result must beLike {
+         case "reply1" => true
+         case "reply2" => true
+         case "reply3" => true
+         case _ => false
+       }
      }
    }
 

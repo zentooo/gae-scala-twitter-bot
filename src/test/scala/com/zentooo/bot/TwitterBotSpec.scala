@@ -81,4 +81,10 @@ class TwitterBotSpec extends SpecificationWithJUnit("Spec for TwitterBot") {
     }
   }
 
+  "checkTimeline" should {
+    "return Text()" in {
+      TwitterBot.checkTimeline(1.0) must beLike { case text: Text => true }
+    }
+  }
+
 }

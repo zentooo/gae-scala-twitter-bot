@@ -19,7 +19,7 @@ tweet2"""
 
   // describe replies with format "regex:string".
   // In reply string, %username% will be replaced with user's name.
-  val replies = """regex1:sample reply
-regex2:Hello, %username%!
+  val replies = """regex1:sample reply1;sample reply2;sample reply3
+regex2:Hello, %username%!;Hello, World!
 regex3:sample reply"""
 }

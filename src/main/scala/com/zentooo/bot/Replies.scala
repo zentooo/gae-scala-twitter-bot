@@ -16,9 +16,14 @@ object Replies {
   def getReply(status: Status): Option[String] = {
     val regexAndString = replyMap.find(regexAndReply => regexAndReply._1.findFirstIn(status.getText) != None)
     regexAndString match {
-      case o: Some[(Regex, String)] => Some(o.get._2)
+      case o: Some[(Regex, String)] => Some(selectReply(o.get._2))
       case None => None
     }
+  }
+
+  def selectReply(repliesString: String): String = {
+    val replies = repliesString.split(";").toList
+    return replies(random.nextInt(replies.size))
   }
 
   def tupleListToMap[T1, T2](list: List[(T1, T2)]): Map[T1, T2] = {
